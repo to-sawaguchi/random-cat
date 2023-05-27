@@ -24,6 +24,7 @@ const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
     setLoading(false);
   };
   return (
+    <div>
       <button
         onClick={handleClick}
         style={{
@@ -36,6 +37,9 @@ const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
       >
         きょうのにゃんこ🐱
       </button>
+      <div style={{ marginTop: 8, maxWidth: 500 }}>
+        <img src={catImageUrl} width="100%" height="auto" alt="猫" />
+      </div>
     </div>
   );
 };
