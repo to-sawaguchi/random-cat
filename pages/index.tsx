@@ -8,20 +8,11 @@ type Props = {
 };
  
 // ページコンポーネント関数にpropsを受け取る引数を追加する
-const IndexPage: NextPage<Props> = ({ initialImageUrl }) => {
-  const [imageUrl, setImageUrl] = useState(initialImageUrl); // 初期値を渡す
-  const [loading, setLoading] = useState(false); // 初期状態はfalseにしておく
-  // useEffect(() => {
-  //   fetchImage().then((newImage) => {
-  //     setImageUrl(newImage.url);
-  //     setLoading(false);
-  //   });
-  // }, []);
+const IndexPage: NextPage<IndexPageProps> = ({ initialCatImageUrl }) => {
+  const [catImageUrl, setCatImageUrl] = useState(initialCatImageUrl);
   const handleClick = async () => {
-    setLoading(true);
-    const newImage = await fetchImage();
-    setImageUrl(newImage.url);
-    setLoading(false);
+    const image = await fetchCatImage();
+    setCatImageUrl(image.url);
   };
   return (
     <div>
